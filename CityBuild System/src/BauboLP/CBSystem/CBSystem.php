@@ -107,6 +107,7 @@ class CBSystem extends PluginBase
             $c->set("spawn-teleport", "&aDu wurdest zum Spawn teleportiert.");
             $c->set("farmwelt.not.found", "&4Die Farmwelt wurde nicht gefunden.");
             $c->set("farmwelt.teleport", "&aDu wurdest zur Farmwelt teleportiert.");
+            $c->set("Signature-on-item", "Das Item wurde von #playernametag signiert.");
             $c->save();
         }
         self::$plugin = $this;
@@ -176,8 +177,8 @@ class CBSystem extends PluginBase
 
     public function SignItem(Player $player, $msg) {
         $item = $player->getInventory()->getItemInHand();
-        $sign = str_replace("#nametag", $player->getNameTag(), $this->getTextContainer("Signature-on-item"));
-        $item->setLore(["\n$sign\n\n$msg"]);
+        $sign = str_replace("#playernametag", $player->getNameTag(), $this->getTextContainer("Signature-on-item"));
+        $item->setLore(["\n$msg\n\n$sign"]);
         $player->getInventory()->setItemInHand($item);
         $player->sendMessage(CBSystem::Prefix.$this->getTextContainer("Item-was-signed"));
     }
