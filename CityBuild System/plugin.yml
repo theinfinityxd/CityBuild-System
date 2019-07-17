@@ -1,0 +1,6 @@
+name: CityBuild
+api: 3.3.0
+main: BauboLP\CBSystem\CBSystem
+version: 1.0
+author: BauboLP
+description: Plugin for PocketMine Servers. Made by BauboLP
