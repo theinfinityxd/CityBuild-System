@@ -62,6 +62,8 @@ class EventHandler implements Listener
             $event->getPlayer()->sendMessage(CBSystem::Prefix . CBSystem::getPlugin()->getTextContainer("FlyMode-was-activated"));
         }else {
             $event->getPlayer()->sendMessage(CBSystem::Prefix . CBSystem::getPlugin()->getTextContainer("FlyMode-was-disabled"));
+            $event->getPlayer()->setFlying(FALSE);
+            $event->getPlayer()->setAllowFlight(FALSE);
         }
 
         if (CBSystem::getPlugin()->BreakBoosterIsEnable()) {
@@ -70,6 +72,7 @@ class EventHandler implements Listener
             $event->getPlayer()->sendMessage(CBSystem::Prefix . CBSystem::getPlugin()->getTextContainer("Break-was-activated"));
         }else {
             $event->getPlayer()->sendMessage(CBSystem::Prefix . CBSystem::getPlugin()->getTextContainer("Break-was-disabled"));
+            $event->getPlayer()->removeEffect(3);
         }
     }
 
