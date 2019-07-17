@@ -4,3 +4,17 @@ main: BauboLP\CBSystem\CBSystem
 version: 1.0
 author: BauboLP
 description: Plugin for PocketMine Servers. Made by BauboLP
+
+permissions:
+  cb.set.money:
+    default: op
+  cb.remove.money:
+    default: op
+  cb.repair:
+    default: op
+  cb.add.money:
+    default: op
+  cb.sign:
+    default: op
+  cb.startkick:
+    default: op
